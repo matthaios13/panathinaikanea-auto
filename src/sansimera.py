@@ -137,7 +137,7 @@ def texts(c, label, cfg):
         lines.append(f"🏟️ {stadium}")
     if c.get("scorers") and c["scorers"] not in ("-", "–"):
         lines.append(f"⚽ Σκόρερ: {c['scorers']}")
-    lines += ["", rnd.choice(CLOSING)]
+    lines += ["", rnd.choice(CLOSING if label == "ΣΑΝ ΣΗΜΕΡΑ" else CLOSING[:2])]
     caption = "\n".join(lines) + f"\n\n{cfg['source']['credit']}\n\n{cfg['hashtags']}"
     title = f"{'ΣΑΝ ΣΗΜΕΡΑ' if label == 'ΣΑΝ ΣΗΜΕΡΑ' else 'ΣΑΝ ΑΥΤΗ ΤΗΝ ΕΒΔΟΜΑΔΑ'} {y}: {home} – {away} {c['result']} ☘️"
     overlay = {"label": label, "date_text": f"{d} {MONTHS[m - 1]}", "year": str(y), "home": home, "away": away,

@@ -16,6 +16,9 @@ queue:
 schedule:
   timezone: "Europe/Athens"
   slots: ["12:00", "17:30", "21:30"]
+  # Έκτακτες ώρες για συγκεκριμένη μέρα
+  overrides:
+    "2026-11-17": ["19:00", "20:30", "22:00"]
   grace_hours: 3
 
 hashtags: "#panathinaikanea #panathinaikos #paofc #σανσημερα #παναθηναϊκός #retrofootball"

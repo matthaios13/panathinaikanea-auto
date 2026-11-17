@@ -120,15 +120,29 @@ def has_audio(path):
     return "Audio:" in r.stderr
 
 
+def detect_crop(path, dur):
+    """Βρίσκει μαύρες μπάρες (π.χ. παλιό 4:3 μέσα σε 16:9) για να κοπούν."""
+    import re
+    from collections import Counter
+    r = subprocess.run(
+        [ffmpeg_exe(), "-ss", str(min(2, dur / 4)), "-t", "20", "-i", str(path),
+         "-vf", "fps=2,cropdetect=limit=24:round=2:reset=1", "-f", "null", "-"],
+        capture_output=True, text=True)
+    found = re.findall(r"crop=(\d+:\d+:\d+:\d+)", r.stderr)
+    return Counter(found).most_common(1)[0][0] if found else None
+
+
 def render(video_path, info, out_path, max_seconds=170):
     dur = min(probe_duration(video_path), max_seconds)
+    crop = detect_crop(video_path, dur)
+    crop_f = f"crop={crop}," if crop else ""
     work = Path(out_path).with_suffix("")
     ov, end = f"{work}_ov.png", f"{work}_end.png"
     build_overlay(info, ov)
     build_endcard(end)
     vh = VID_BOT - VID_TOP
     fc = (
-        f"[0:v]fps=30,split[a][b];"
+        f"[0:v]{crop_f}fps=30,split[a][b];"
         f"[a]scale={W}:{vh}:force_original_aspect_ratio=increase,crop={W}:{vh},boxblur=25:2,eq=brightness=-0.15[bg];"
         f"[b]scale={W}:{vh}:force_original_aspect_ratio=decrease:flags=lanczos[fg];"
         f"color={'0x08140d'}:s={W}x{H}:r=30:d={dur:.3f}[base];"
