@@ -1,0 +1,30 @@
+# Ρυθμίσεις Παναθηναϊκά Νέα — «ΣΑΝ ΣΗΜΕΡΑ» (ματς του Παναθηναϊκού που έγιναν την ίδια μέρα στο παρελθόν)
+# Μπορείς να αλλάξεις ό,τι θέλεις εδώ μέσα από το GitHub (κουμπί ✏️) χωρίς να αγγίξεις κώδικα.
+
+active: false
+
+source:
+  credit: "🎥 Πηγή: @microneuro"
+  max_seconds: 170
+  exclude_recent_seasons: 1
+  # Ποτέ το ίδιο βίντεο με το Τριφυλλάκια (διαβάζει τι έχει ανέβει/περιμένει εκεί)
+  exclude_repo: "matthaios13/trifillakia-auto"
+
+queue:
+  days_ahead: 7           # 7 μέρες x 3 = 21 βίντεο, το καθένα για τη δική του ημερομηνία
+
+schedule:
+  timezone: "Europe/Athens"
+  slots: ["12:00", "17:30", "21:30"]
+  grace_hours: 3
+
+hashtags: "#panathinaikanea #panathinaikos #paofc #σανσημερα #παναθηναϊκός #retrofootball"
+
+publish:
+  instagram: true
+  instagram_story: true
+  facebook: true
+  youtube: false          # αργότερα, όταν φτιαχτεί το κανάλι
+  youtube_auto_public: true
+  youtube_review_minutes: 30
+  youtube_paid_promotion: false
