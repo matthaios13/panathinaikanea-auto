@@ -205,6 +205,18 @@
         "Instagram Story: container 400: {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"code\":190,\"type\":\"OAuthException\",\"error_subcode\":460,\"fbtrace_id\":\"AZnabkpPWRsmyM_ykrXlId7\"}}",
         "Facebook: start 400: {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthException\",\"code\":190,\"error_subcode\":460,\"fbtrace_id\":\"AKtat7zt6Jir_-xwo_sFcjX\"}}"
       ]
+    },
+    {
+      "slot": "2026-11-22 17:30",
+      "source_id": "M_qypH6Els8",
+      "source_title": "ΠΑΝΑΘΗΝΑΪΚΟΣ - ΑΕΚ 1992/93",
+      "title": "ΣΑΝ ΣΗΜΕΡΑ 1992: ΠΑΝΑΘΗΝΑΪΚΟΣ – ΑΕΚ 1-1 ☘️ #shorts",
+      "ok": false,
+      "errors": [
+        "Instagram: container 400: {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"code\":190,\"type\":\"OAuthException\",\"error_subcode\":460,\"fbtrace_id\":\"ANdsiXaFnLb34Jd9EqqXBOc\"}}",
+        "Instagram Story: container 400: {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"code\":190,\"type\":\"OAuthException\",\"error_subcode\":460,\"fbtrace_id\":\"AEOGkjKOSNn7BVaowzYHBQP\"}}",
+        "Facebook: start 400: {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthException\",\"code\":190,\"error_subcode\":460,\"fbtrace_id\":\"APvWZk3BKuYawefyPM-fxF9\"}}"
+      ]
     }
   ]
 }
